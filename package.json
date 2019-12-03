@@ -1,6 +1,6 @@
 {
   "name": "@wenye123/async-once",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "多个异步函数只执行一次",
   "keywords": [
     "typescript",
