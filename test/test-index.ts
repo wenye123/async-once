@@ -1,4 +1,4 @@
-import { AsyncOnce, AsyncOnceError } from "../src/index";
+import AsyncOnce, { AsyncOnceError } from "../src/index";
 import { assert } from "chai";
 
 function sleep(ms: number) {

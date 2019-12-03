@@ -11,7 +11,7 @@ export interface IAsyncOnceOptions {
   timeout?: number;
 }
 
-export class AsyncOnce {
+export default class AsyncOnce {
   private timeout: number;
   private event: EventEmitter;
 
