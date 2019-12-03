@@ -1,0 +1,62 @@
+{
+  "name": "@wenye123/async-once",
+  "version": "1.0.0",
+  "description": "多个异步函数只执行一次",
+  "keywords": [
+    "typescript",
+    "async",
+    "wenye",
+    "once"
+  ],
+  "author": "wenye <1583247975@qq.com>",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "format": "prettier --write \"./{src,benchmark,test}/**/*.{js,ts,json,yaml}\"",
+    "compile": "rm -rf dist && tsc",
+    "prepublish": "npm run compile",
+    "test": "npm run format && mocha test/test-*.ts",
+    "test:cov": "nyc mocha test/test-*.ts"
+  },
+  "nyc": {
+    "all": true,
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src"
+    ],
+    "reporter": [
+      "text",
+      "text-summary",
+      "lcov"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wenye123/async-once.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wenye123/async-once/issues"
+  },
+  "homepage": "https://github.com/wenye123/async-once#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.5",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.12.14",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.9",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.2"
+  }
+}
