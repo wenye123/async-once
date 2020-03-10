@@ -32,7 +32,7 @@ export default class AsyncOnce {
       // 首个请求
       if (this.event.listenerCount(tag) === 1) {
         // 超时处理
-        setTimeout(() => {
+        const tid = setTimeout(() => {
           if (this.event.eventNames().includes(tag)) {
             this.event.emit(tag, new AsyncOnceError());
           }
@@ -44,6 +44,9 @@ export default class AsyncOnce {
           })
           .catch(err => {
             this.event.emit(tag, err);
+          })
+          .finally(() => {
+            clearTimeout(tid);
           });
       }
     });
